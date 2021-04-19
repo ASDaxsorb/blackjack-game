@@ -79,7 +79,11 @@ const myModule = (() => {
         const [puntosMinimos, puntosPC] = puntosJugadores;
 
         setTimeout(() => {
-            if (puntosPC === puntosMinimos || puntosPC < 21) {
+            if (
+                puntosPC === puntosMinimos ||
+                (puntosPC < 21 && puntosMinimos < 21) ||
+                (puntosPC < 21 && puntosMinimos < 21)
+            ) {
                 alert("Nadie gana");
             } else if (puntosMinimos > 21 || puntosPC === 21) {
                 alert("La computadora gana");
